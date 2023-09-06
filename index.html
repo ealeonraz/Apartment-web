@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON Viewer</title>
+</head>
+<body>
+    <pre id="json-data"></pre>
+
+    <script>
+        fetch('listings.json')
+            .then(response => response.json())
+            .then(jsonData => {
+                // Display the JSON data as a string
+                document.getElementById("json-data").textContent = JSON.stringify(jsonData, null, 2);
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>
